@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item  android:id="@+id/picture"
+        android:title="图片"
+        android:icon="@drawable/navigation_icon_color"/>
+
+    <item  android:id="@+id/cultural_heritage"
+        android:title="非物质文化遗产"
+        android:icon="@drawable/navigation_icon_color"/>
+    <item  android:id="@+id/protection_zone"
+              android:title="保护区"
+        android:icon="@drawable/navigation_icon_color"/>
+
+    <item  android:id="@+id/quiz"
+        android:title="知识问答"
+        android:icon="@drawable/navigation_icon_color"/>
+</menu>
