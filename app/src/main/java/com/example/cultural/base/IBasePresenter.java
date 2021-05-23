@@ -1,4 +1,10 @@
 package com.example.cultural.base;
 
-public interface IBasePresenter {
+
+public interface IBasePresenter <T> {
+    //注册UI通知更新接口
+    void registerViewCallback(T callback);
+
+    //取消注册UI通知更新接口
+    void unregisterViewCallback(T callback);
 }

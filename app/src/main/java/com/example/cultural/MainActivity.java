@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         mProtectionZoneFragment = new ProtectionZoneFragment();
         mQuizFragment = new QuizFragment();
         fm = getSupportFragmentManager();
-        switchFragment(mCulturalHeritageFragment);
+        switchFragment(mPictureFragment);
     }
 
     class th extends Thread{
