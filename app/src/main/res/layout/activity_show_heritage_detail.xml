@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.ShowHeritageDetailActivity"
+    android:background="@mipmap/b5">
+<TextView
+    android:id="@+id/activity_heritage_title_tv"
+    android:text="苗族民歌"
+    android:gravity="center"
+    android:background="@mipmap/b4"
+    android:textColor="#ffffff"
+    android:layout_marginTop="30dp"
+    android:textSize="30sp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+
+    tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/activity_heritage_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="公布时间：2000"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_heritage_title_tv"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/activity_heritage_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="类别：民间文学"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_heritage_time_tv"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/activity_heritage_province_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="所属地区：山东省"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_heritage_type_tv"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/activity_heritage_cate_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="类型：扩展项目"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_heritage_province_tv"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/activity_heritage_area_tv"
+        android:layout_width="match_parent"
+        android:singleLine="false"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="申报地区或单位：山东省菏泽市牡丹区"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_heritage_cate_tv"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/activity_heritage_protect_unit_tv"
+        android:layout_width="match_parent"
+        android:singleLine="false"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="保护单位：菏泽市牡丹区文化馆"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_heritage_area_tv"
+        tools:ignore="MissingConstraints" />
+    <View
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_heritage_protect_unit_tv"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        tools:ignore="MissingConstraints" />
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_heritage_protect_unit_tv"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="50dp"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/activity_heritage_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:singleLine="false"
+            android:text="苗族分布在我国西南数省区。按方言划分，大致可分为湘西方言区、黔东方言区、川滇黔方言区。黔东南清水江流域一带是全国苗族最大的聚居区，大致包括凯里、剑河、黄平、台江、雷山、丹寨、施秉、黄平、镇远、三穗，以及广西三江和湖南靖县等地。在此广大苗族聚居区普遍流传着一种以创世为主体内容的诗体神话，俗称“古歌”或“古歌古词”。
+　　苗族古歌内容包罗万象，从宇宙的诞生、人类和物种的起源、开天辟地、初民时期的滔天洪水，到苗族的大迁徙、苗族的古代社会制度和日常生产生活等，无所不包，成为苗族古代神话的总汇。
+　　苗族古歌古词神话大多在鼓社祭、婚丧活动、亲友聚会和节日等场合演唱，演唱者多为中老年人、巫师、歌手等。酒席是演唱古歌的重要场合。苗族的古歌古词神话是一个民族的心灵记忆，是苗族古代社会的百科全书和“经典”，具有史学、民族学、哲学、人类学等多方面价值。今天，这些古歌古词神话还在民间流传唱诵。
+　　但由于受到现代文化和市场经济的冲击，苗族古歌已濒临失传。以台江为例，在全县13万苗族同胞中，能唱完整部古歌的已寥寥无几，目前只有二百余人能唱一些不完整的古歌，而且都是中老年人，传承古歌较多的老人年事已高。如不抓紧抢救保护，苗族古歌这一民族瑰宝将最终在世间消失。"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            tools:ignore="MissingConstraints" />
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

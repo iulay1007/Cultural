@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginTop="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView
+    app:cardCornerRadius="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingConstraints">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    tools:ignore="MissingConstraints"
+    android:background="@mipmap/img3"
+
+    >
+
+
+    <TextView
+        android:id="@+id/heritage_title_tv"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="苗族民歌"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@mipmap/b3"
+        />
+
+
+    <TextView
+        android:layout_marginTop="2dp"
+        android:id="@+id/heritage_province_tv"
+        android:layout_marginRight="20dp"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:singleLine="true"
+        android:background="@mipmap/b1"
+        android:gravity="center"
+        android:text="贵州省台江县"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toEndOf="@+id/heritage_title_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/heritage_title_tv" />
+
+    <TextView
+        android:layout_marginBottom="2dp"
+        android:id="@+id/heritage_type_tv"
+        android:layout_width="200dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="30dp"
+
+        android:background="@mipmap/b5"
+        android:gravity="center"
+        android:text="民间文学"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/heritage_title_tv"
+        app:layout_constraintStart_toEndOf="@+id/heritage_title_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,26 +7,24 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.res.AssetManager;
-import android.os.AsyncTask;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
-import com.example.cultural.base.BaseApplication;
 import com.example.cultural.base.BaseFragment;
-import com.example.cultural.model.API;
-import com.example.cultural.model.domain.IntangibleCulturalHeritage;
 import com.example.cultural.ui.fragment.CulturalHeritageFragment;
 import com.example.cultural.ui.fragment.PictureFragment;
 import com.example.cultural.ui.fragment.ProtectionZoneFragment;
 import com.example.cultural.ui.fragment.QuizFragment;
-import com.example.cultural.utils.RetrofitManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,10 +32,6 @@ import butterknife.Unbinder;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= 21) {
+            Window window=getWindow();
+            View decorView = window.getDecorView();
+            decorView.setSystemUiVisibility(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
         setContentView(R.layout.activity_main);
         mBind = ButterKnife.bind(this);
         initFragment();
@@ -155,6 +155,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    class Hand extends Handler{}
 
 
 }

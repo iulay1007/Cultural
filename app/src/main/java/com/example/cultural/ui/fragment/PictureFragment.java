@@ -2,6 +2,7 @@ package com.example.cultural.ui.fragment;
 
 import android.content.Intent;
 import android.graphics.Rect;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 
@@ -20,9 +21,9 @@ import com.example.cultural.ui.adapter.PictureListAdapter;
 import com.example.cultural.utils.ItemDecoration;
 import com.example.cultural.view.IPictureCallback;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
+import android.os.Handler;
 
 import butterknife.BindView;
 
@@ -32,6 +33,10 @@ public class PictureFragment extends BaseFragment implements IPictureCallback, P
     public RecyclerView mRecyclerView;
     private PictureListAdapter mPictureListAdapter;
     private IPicturePresenter mPicturePresenter;
+    private static final int MESSAGE_UPDATE_LIST = 1;
+    private List<PictureResponse> pictureResponseList = new ArrayList<>();
+
+
 
     @Override
     protected int getRootViewResId() {
@@ -52,7 +57,8 @@ public class PictureFragment extends BaseFragment implements IPictureCallback, P
 
     @Override
     protected void loadData() {
-        mPicturePresenter.getPictures(getActivity());
+        InnerHandler handler=new InnerHandler();
+        mPicturePresenter.getPictures(getActivity(),handler);
     }
 
     @Override
@@ -67,9 +73,7 @@ public class PictureFragment extends BaseFragment implements IPictureCallback, P
 
     @Override
     public void onPictureLoad(List<PictureResponse> pictureResponseList) {
-        //TODO:recyclerview Setdata
-       // mPictureListAdapter.setmData(pictureResponseList);
-        setupState(State.SUCCESS);
+        this.pictureResponseList = pictureResponseList;
     }
 
 
@@ -90,6 +94,26 @@ public class PictureFragment extends BaseFragment implements IPictureCallback, P
 
     @Override
     public void onItemClick(PictureResponse item) {
-        startActivity(new Intent(getContext(), ShowPictureActivity.class));
+        Intent intent = new Intent(getContext(),ShowPictureActivity.class);
+        intent.putStringArrayListExtra("picture",new ArrayList<>(item.getMpic_url()));
+        intent.putStringArrayListExtra("title",new ArrayList<>(item.getMtitle()));
+        startActivity(intent);
+    }
+
+     class InnerHandler extends Handler{
+
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case MESSAGE_UPDATE_LIST:
+                    mPictureListAdapter.setmData(pictureResponseList);
+                    setupState(State.SUCCESS);
+
+                    break;
+
+
+            }
+        }
     }
 }

@@ -14,10 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/white"
+        android:background="@mipmap/b3"
         app:itemIconTint="@drawable/navigation_bar_color"
-        app:itemTextColor="@drawable/navigation_bar_color"
         app:menu="@menu/my_navigation_items"
+
         />
 
 </RelativeLayout>

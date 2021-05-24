@@ -3,16 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="quiz"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:id="@+id/title"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:text="知识问答"
+        android:textColor="#ffffff"
+        android:background="@mipmap/png24"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        android:id="@+id/quiz_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@+id/title"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

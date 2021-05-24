@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
-public class IntangibleCulturalHeritage implements Serializable {
+public class IntangibleCulturalHeritageResponse implements Serializable {
     /**
      * total : 3145
      * links : {"down":{"url":"/Article/Index/getProject/category_id/16/limit/10/p/2.html","text":">"},"end":{"url":"/Article/Index/getProject/category_id/16/limit/10/p/315.html","text":"...315"},"pages":{"1":"/Article/Index/getProject/category_id/16/limit/10/p/1.html","2":"/Article/Index/getProject/category_id/16/limit/10/p/2.html","3":"/Article/Index/getProject/category_id/16/limit/10/p/3.html","4":"/Article/Index/getProject/category_id/16/limit/10/p/4.html","5":"/Article/Index/getProject/category_id/16/limit/10/p/5.html"},"total":3145,"total_pages":315,"current":1,"url":"/Article/Index/getProject/category_id/16/limit/10/p/_PAGENUM_.html"}

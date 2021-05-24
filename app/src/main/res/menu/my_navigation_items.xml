@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item  android:id="@+id/picture"
-        android:title="图片"
+        android:title="图集"
         android:icon="@drawable/navigation_icon_color"/>
 
     <item  android:id="@+id/cultural_heritage"
