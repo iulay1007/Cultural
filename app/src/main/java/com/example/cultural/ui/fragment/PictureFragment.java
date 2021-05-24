@@ -1,5 +1,6 @@
 package com.example.cultural.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.Rect;
 import android.util.Log;
 import android.view.View;
@@ -14,15 +15,18 @@ import com.example.cultural.base.BaseFragment;
 import com.example.cultural.model.domain.PictureResponse;
 import com.example.cultural.presenter.IPicturePresenter;
 import com.example.cultural.presenter.impl.PicturePresenterImpl;
+import com.example.cultural.ui.activity.ShowPictureActivity;
 import com.example.cultural.ui.adapter.PictureListAdapter;
 import com.example.cultural.utils.ItemDecoration;
 import com.example.cultural.view.IPictureCallback;
 
 import java.util.List;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 import butterknife.BindView;
 
-public class PictureFragment extends BaseFragment implements IPictureCallback {
+public class PictureFragment extends BaseFragment implements IPictureCallback, PictureListAdapter.onPictureItemClickListener {
 
     @BindView(R.id.recyclerview_picture)
     public RecyclerView mRecyclerView;
@@ -42,8 +46,13 @@ public class PictureFragment extends BaseFragment implements IPictureCallback {
     }
 
     @Override
+    protected void initListener() {
+        mPictureListAdapter.setOnPictureItemClickListener(this);
+    }
+
+    @Override
     protected void loadData() {
-        mPicturePresenter.getPictures();
+        mPicturePresenter.getPictures(getActivity());
     }
 
     @Override
@@ -59,8 +68,10 @@ public class PictureFragment extends BaseFragment implements IPictureCallback {
     @Override
     public void onPictureLoad(List<PictureResponse> pictureResponseList) {
         //TODO:recyclerview Setdata
+       // mPictureListAdapter.setmData(pictureResponseList);
         setupState(State.SUCCESS);
     }
+
 
     @Override
     public void onError() {
@@ -75,5 +86,10 @@ public class PictureFragment extends BaseFragment implements IPictureCallback {
     @Override
     public void onEmpty() {
 
+    }
+
+    @Override
+    public void onItemClick(PictureResponse item) {
+        startActivity(new Intent(getContext(), ShowPictureActivity.class));
     }
 }

@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         initFragment();
         initListener();
 
+
      /*   Retrofit retrofit= RetrofitManager.getInstance().getRetrofit();
         API api =retrofit.create(API.class);
         Call<IntangibleCulturalHeritage> task=api.getIntangibleCulturalHeritage();

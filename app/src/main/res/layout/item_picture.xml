@@ -19,13 +19,14 @@
         >
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/image_iv"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         tools:ignore="MissingConstraints"
         android:scaleType="centerCrop"/>
 
     </androidx.cardview.widget.CardView>
+
     <TextView
         android:id="@+id/picture_title_tv"
         android:layout_width="wrap_content"
