@@ -20,7 +20,7 @@ import android.view.WindowManager;
 import com.example.cultural.base.BaseFragment;
 import com.example.cultural.ui.fragment.CulturalHeritageFragment;
 import com.example.cultural.ui.fragment.PictureFragment;
-import com.example.cultural.ui.fragment.ProtectionZoneFragment;
+import com.example.cultural.ui.fragment.NewsFragment;
 import com.example.cultural.ui.fragment.QuizFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fm;
     private CulturalHeritageFragment mCulturalHeritageFragment;
     private PictureFragment mPictureFragment;
-    private ProtectionZoneFragment mProtectionZoneFragment;
+    private NewsFragment mNewsFragment;
     private QuizFragment mQuizFragment;
 
     @Override
@@ -87,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             if(item.getItemId()==R.id.cultural_heritage){
                 switchFragment(mCulturalHeritageFragment);
-            }else if(item.getItemId()==R.id.protection_zone){
-                switchFragment(mProtectionZoneFragment);
+            }else if(item.getItemId()==R.id.news){
+                switchFragment(mNewsFragment);
             }
             else if(item.getItemId()==R.id.picture){
                 switchFragment(mPictureFragment);
@@ -117,14 +117,13 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.hide(lastOneFragment);
         }
         lastOneFragment = targetFragment;
-        //fragmentTransaction.replace(R.id.main_page_container,targetFragment);
         fragmentTransaction.commit();
     }
 
     private void initFragment() {
         mCulturalHeritageFragment = new CulturalHeritageFragment();
         mPictureFragment = new PictureFragment();
-        mProtectionZoneFragment = new ProtectionZoneFragment();
+        mNewsFragment = new NewsFragment();
         mQuizFragment = new QuizFragment();
         fm = getSupportFragmentManager();
         switchFragment(mPictureFragment);

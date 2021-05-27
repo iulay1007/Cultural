@@ -7,8 +7,8 @@
     <item  android:id="@+id/cultural_heritage"
         android:title="非物质文化遗产"
         android:icon="@drawable/navigation_icon_color"/>
-    <item  android:id="@+id/protection_zone"
-              android:title="保护区"
+    <item  android:id="@+id/news"
+              android:title="新闻"
         android:icon="@drawable/navigation_icon_color"/>
 
     <item  android:id="@+id/quiz"
